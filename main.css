@@ -56,6 +56,6 @@ div#main{
 	right: 10px;
 }
 
-/*.list {
-	padding: 10px;
-}*/
+.list {
+	margin: 5px;
+}
