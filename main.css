@@ -39,7 +39,6 @@ div#main{
 
 .box {
 	bottom: 10px;
-	border: 5px solid gray;
 	font-size: 4em;
 	color: gray;
 }
@@ -58,4 +57,5 @@ div#main{
 
 .list {
 	margin: 5px;
+	list-style: url("https://p0wersurge.com/forums/images/smilies/doge.png");
 }
