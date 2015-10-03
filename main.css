@@ -10,6 +10,11 @@ min-width: 50%;
 min-height: 50%;
 
 }
+
+
+body {
+	background-size: cover;
+}
 div#background{
 	position: float;
 	top: -50%;
