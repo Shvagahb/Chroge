@@ -12,15 +12,24 @@ var numOfBackgrounds = 11;
 
 
 
+//size of boxes
 function boxsize() {
+  //find width
   var docWidth = $(window).width();
-  var boxWidth = (docWidth/2)-10;
-  console.log(docWidth, boxWidth);
+  var boxWidth = (docWidth/2)-25;
+  //console.log(docWidth, boxWidth);
+
+  //find height
+  var docHeight = $(window).height();
+  var boxHeight = docHeight-100;
 
   var boxes = document.getElementsByClassName("box")
   for(var i=0; i<boxes.length; i++){
-  	boxes[i].style.width = boxWidth + "px";
+    boxes[i].style.width = boxWidth + "px";
+    boxes[i].style.height = boxHeight + "px";
   }
 }
-
 boxsize();
+window.onresize = function(event) {
+  boxsize();
+}
