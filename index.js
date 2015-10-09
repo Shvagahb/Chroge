@@ -24,7 +24,7 @@ Quotation[0] = "Don't watch the clock; do what it does. Keep going";
 Quotation[1] = "ll men are created equal.  Some work harder in preseason.";
 Quotation[2] = "You are never too old to set another goal or to dream a new dream.";
 Quotation[3] = "dare you to fail..";
-Quotation[4] = "You quitting and you ain’t even tried yet.";
+Quotation[4] = "You quitting and you aint even tried yet.";
 Quotation[5] = "Entrepreneurs average 3.8 failures before final success. What sets the successful ones apart is their amazing persistence.";
 Quotation[6] = "O! Youth! What a pain in the backside.";
 Quotation[7] = "Success usually comes to those who are too busy to be looking for it.";
@@ -38,6 +38,9 @@ var Q = Quotation.length;
 var whichQuotation=Math.round(Math.random()*(Q-1));
 function showQuotation(){document.write(Quotation[whichQuotation]);}
 showQuotation();
+document.body.style.color = "white";
+
+
 // </script>
 
 
