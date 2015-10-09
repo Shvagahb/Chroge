@@ -3,7 +3,7 @@
 
 
   "name": "Chroge",
-  "description": "This extension replaces the new tab page for note taking.",
+  "description": "This extension replaces the new tab page with motivation.",
   "version": "0.2",
   "permissions": [
     "storage"
