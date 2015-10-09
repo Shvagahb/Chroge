@@ -56,7 +56,7 @@ function boxsize() {
 
   //find height
   var docHeight = $(window).height();
-  var boxHeight = docHeight-100;
+  var boxHeight = docHeight-200;
 
   var boxes = document.getElementsByClassName("box")
   for(var i=0; i<boxes.length; i++){
