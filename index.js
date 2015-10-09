@@ -12,7 +12,8 @@ var numOfBackgrounds = 11;
 
 
 
-//size of boxes
+
+//allocate size of boxes
 function boxsize() {
   //find width
   var docWidth = $(window).width();
