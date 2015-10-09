@@ -1,6 +1,6 @@
 
 // var appBtn = document.getElementById("appBtn");
-var numOfBackgrounds = 11;
+var numOfBackgrounds = 28;
 	var n = Math.floor((Math.random() * numOfBackgrounds) + 1);
 	document.body.style.backgroundImage = "url('bg/"+n+".jpg')";
 
@@ -28,7 +28,7 @@ Quotation[2] = "You are never too old to set another goal or to dream a new drea
 Quotation[3] = "dare you to fail..";
 Quotation[4] = "You quitting and you aint even tried yet.";
 Quotation[5] = "Entrepreneurs average 3.8 failures before final success. What sets the successful ones apart is their amazing persistence.";
-Quotation[6] = "O! Youth! What a pain in the backside.";
+Quotation[6] = "What do YOU WANT TO DO?";
 Quotation[7] = "Success usually comes to those who are too busy to be looking for it.";
 Quotation[8] = "Love the river's \"beauty\", but live on a hill.";
 Quotation[9] = "Strength does not come from winning. Your struggles develop your strengths. When you go through hardships and decide not to surrender, that is strength.";
