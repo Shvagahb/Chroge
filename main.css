@@ -62,8 +62,14 @@ div#main{
 	list-style: url("https://p0wersurge.com/forums/images/smilies/doge.png");
 }
 
-#motQuote{
+#quoteBox{
 	font-weight: 400;
-	color: green;
+	color: white;
+	font-size: 5em;
+	padding-top: 44%; 
+	font-family: monospace;
 
 }
+
+
+
