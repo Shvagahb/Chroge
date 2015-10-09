@@ -23,7 +23,7 @@ var Quotation=new Array() // do not change this!
 // to increment the Quotation[x] index!
 
 Quotation[0] = "Don't watch the clock; do what it does. Keep going";
-Quotation[1] = "ll men are created equal.  Some work harder in preseason.";
+Quotation[1] = "All men are created equal.  Some work harder in preseason.";
 Quotation[2] = "You are never too old to set another goal or to dream a new dream.";
 Quotation[3] = "dare you to fail..";
 Quotation[4] = "You quitting and you aint even tried yet.";
