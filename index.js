@@ -38,9 +38,16 @@ Quotation[9] = "Strength does not come from winning. Your struggles develop your
 // ======================================
 var Q = Quotation.length;
 var whichQuotation=Math.round(Math.random()*(Q-1));
-function showQuotation(){document.write(Quotation[whichQuotation]);}
-showQuotation();
+
 document.body.style.color = "white";
+
+
+//insert quotes into div
+var quoteContainer = document.getElementById('quoteBox');
+var quote = "<span class='quote'>" + Quotation[whichQuotation] + "</span>";
+quoteContainer.innerHTML += quote;
+
+
 
 
 // </script>
