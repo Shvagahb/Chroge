@@ -38,20 +38,23 @@ div#main{
 }
 
 .box {
-	bottom: 10px;
+	bottom: 100px;
 	font-size: 4em;
-	color: gray;
+	color: white;
+	overflow: scroll;
 }
 
 #box1 {
-	background-color: rgba(255, 255, 255, 0);
+	background-color: gray;
+	opacity: 0.6;
 	position: absolute;
 	left: 10px;
 }
 
 #box2 {
-	background-color: rgba(255, 255, 255, 0);
+	background-color: gray;
 	position: absolute;
+	opacity: 0.6;
 	right: 10px;
 }
 
@@ -59,3 +62,20 @@ div#main{
 	margin: 5px;
 	list-style: url("https://p0wersurge.com/forums/images/smilies/doge.png");
 }
+
+#quoteBox{
+	position: absolute;
+	bottom: 5px;
+	width: 95%;
+	height: 80px;
+}
+
+.quote {
+	font-weight: 400;
+	color: white;
+	font-size: 1vw;
+	font-family: monospace;
+}
+
+
+
