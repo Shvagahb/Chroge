@@ -23,7 +23,7 @@ var Quotation=new Array() // do not change this!
 // to increment the Quotation[x] index!
 
 Quotation[0] = "Don't watch the clock; do what it does. Keep going";
-Quotation[1] = "ll men are created equal.  Some work harder in preseason.";
+Quotation[1] = "All men are created equal.  Some work harder in preseason.";
 Quotation[2] = "You are never too old to set another goal or to dream a new dream.";
 Quotation[3] = "dare you to fail..";
 Quotation[4] = "You quitting and you aint even tried yet.";
@@ -42,22 +42,93 @@ var whichQuotation=Math.round(Math.random()*(Q-1));
 document.body.style.color = "white";
 
 
-//insert quotes into div
+// insert quotes into div
 var quoteContainer = document.getElementById('quoteBox');
 var quote = "<span class='quote'>" + Quotation[whichQuotation] + "</span>";
 quoteContainer.innerHTML += quote;
 
+// thanks, matt
+      var storage = {};
+      var stor = true;
+      var lineNum = 0;
+      var ulCont = document.getElementsByClassName('list'); // all lists to an array
 
+      // find storage or set to nothing in order to render
+      if (localStorage && localStorage.getItem('list')) {
+        storage = JSON.parse(localStorage.getItem('list'));
+        console.log(storage);
+      }
+      else {
+        storage = {
+          "0": ""
+        }
+        stor = false;
+      }
 
+      // loop through storage and render each line approriately
+      var length = Object.keys(storage).length;
+      var lists = document.getElementsByClassName("list");
+      for(var i=0; i <= length; i++) {
+        var li = document.createElement("li");
+        li.setAttribute("id", lineNum);
 
-// </script>
+        //var btn = createBtn(lineNum);
+        var txt = createTxt(lineNum);
 
+        // create last line
+        if (i == length) {
+          if(stor) {
+            li.setAttribute("class", "last");
+            li.addEventListener("click", function(){
+              li.setAttribute("class", "");
+            });
+            txt.appendChild(document.createTextNode(""));
+          } else 
+            break;
+        } else {
+          txt.appendChild(document.createTextNode(storage[i]));
+        }
+        lists[0].appendChild(txt);
+        lineNum++;
+      }
+      
+
+      // returns a editable text element
+      function createTxt(line) {
+        var txt = document.createElement("li");
+        txt.setAttribute("id", line);
+        txt.setAttribute("contentEditable", true);
+        txt.setAttribute("class", "txt");
+
+        return txt;
+      }
+
+      // put text into storage
+      // console.log(ulCont[0]);
+      window.onkeypress = function(event){
+
+          // get an array of just the txt elements
+          var array1 = ulCont[0].getElementsByTagName("li");
+          
+          // reset and refill storage
+          storage = {};
+          for(var i=0, j=0; i < array1.length; i++) {
+            var text = array1[i].innerText;
+            if (text != "\n" && text != '' && text != ' '){
+              storage[j] = text;
+              j++;
+            }
+          }
+          
+          localStorage.setItem('list', JSON.stringify(storage));
+          console.log(JSON.stringify(storage));
+      }
+      
 
 
 
 
 //allocate size of boxes
-//size of boxes
 function boxsize() {
   //find width
   var docWidth = $(window).width();
