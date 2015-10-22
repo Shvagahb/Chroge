@@ -53,56 +53,6 @@ quoteContainer.innerHTML += quote;
       var lineNum = 0;
       var ulCont = document.getElementsByClassName('list'); // all lists to an array
 
-      // find storage or set to nothing in order to render
-      if (localStorage && localStorage.getItem('list')) {
-        storage = JSON.parse(localStorage.getItem('list'));
-        console.log(storage);
-      }
-      else {
-        storage = {
-          "0": ""
-        }
-        stor = false;
-      }
-
-      // loop through storage and render each line approriately
-      var length = Object.keys(storage).length;
-      var lists = document.getElementsByClassName("list");
-      for(var i=0; i <= length; i++) {
-        var li = document.createElement("li");
-        li.setAttribute("id", lineNum);
-
-        //var btn = createBtn(lineNum);
-        var txt = createTxt(lineNum);
-
-        // create last line
-        if (i == length) {
-          if(stor) {
-            li.setAttribute("class", "last");
-            li.addEventListener("click", function(){
-              li.setAttribute("class", "");
-            });
-            txt.appendChild(document.createTextNode(""));
-          } else 
-            break;
-        } else {
-          txt.appendChild(document.createTextNode(storage[i]));
-        }
-        lists[0].appendChild(txt);
-        lineNum++;
-      }
-      
-
-      // returns a editable text element
-      function createTxt(line) {
-        var txt = document.createElement("li");
-        txt.setAttribute("id", line);
-        txt.setAttribute("contentEditable", true);
-        txt.setAttribute("class", "txt");
-
-        return txt;
-      }
-
       // put text into storage
       // console.log(ulCont[0]);
       window.onkeypress = function(event){
@@ -123,6 +73,57 @@ quoteContainer.innerHTML += quote;
           localStorage.setItem('list', JSON.stringify(storage));
           console.log(JSON.stringify(storage));
       }
+
+      // find storage or set to nothing in order to render
+      if (localStorage && localStorage.getItem('list')) {
+        storage = JSON.parse(localStorage.getItem('list'));
+        console.log(storage);
+      }
+      else {
+        storage = {
+          "0": ""
+        }
+        stor = false;
+      }
+
+      // loop through storage and render each line approriately
+      var length = Object.keys(storage).length;
+      for(var i=0; i <= length; i++) {
+        var li = document.createElement("li");
+        li.setAttribute("id", lineNum);
+
+        //var btn = createBtn(lineNum);
+        var txt = createTxt(lineNum);
+
+        // create last line
+        if (i == length) {
+          if(stor) {
+            li.setAttribute("class", "last");
+            li.addEventListener("click", function(){
+              li.setAttribute("class", "");
+            });
+            txt.appendChild(document.createTextNode(""));
+          } else 
+            break;
+        } else {
+          txt.appendChild(document.createTextNode(storage[i]));
+        }
+        ulCont[0].appendChild(txt);
+        lineNum++;
+      }
+      
+
+      // returns a editable text element
+      function createTxt(line) {
+        var txt = document.createElement("li");
+        txt.setAttribute("id", line);
+        txt.setAttribute("contentEditable", true);
+        txt.setAttribute("class", "txt");
+
+        return txt;
+      }
+
+      
       
 
 
@@ -149,46 +150,45 @@ boxsize();
 window.onresize = function(event) {
   boxsize();
 }
-<<<<<<< HEAD
 
 
 
 
 
 
-var ostream;
 
-var file = Cc["@mozilla.org/file/local;1"].createInstance(Ci.nsILocalFile);
-file.initWithPath('/home/rob/Desktop/');
-file.append('Test.txt');
+// var ostream;
+
+// var file = Cc["@mozilla.org/file/local;1"].createInstance(Ci.nsILocalFile);
+// file.initWithPath('/home/rob/Desktop/');
+// file.append('Test.txt');
 
 
 
-try{        
+// try{        
 
-    if (file.exists() === false) {file.create(Ci.nsIFile.NORMAL_FILE_TYPE, 420);}
+//     if (file.exists() === false) {file.create(Ci.nsIFile.NORMAL_FILE_TYPE, 420);}
 
-    ostream = FileUtils.openFileOutputStream(file, FileUtils.MODE_WRONLY | FileUtils.MODE_APPEND);
+//     ostream = FileUtils.openFileOutputStream(file, FileUtils.MODE_WRONLY | FileUtils.MODE_APPEND);
 
-    var converter = Cc["@mozilla.org/intl/scriptableunicodeconverter"].createInstance(Ci.nsIScriptableUnicodeConverter);
-    converter.charset = "UTF-8";
+//     var converter = Cc["@mozilla.org/intl/scriptableunicodeconverter"].createInstance(Ci.nsIScriptableUnicodeConverter);
+//     converter.charset = "UTF-8";
 
-    var istream = converter.convertToInputStream('This is my string of text');
+//     var istream = converter.convertToInputStream('This is my string of text');
 
-    // The last argument (the callback) is optional.
-    NetUtil.asyncCopy(istream, ostream, function(status) {
+//     // The last argument (the callback) is optional.
+//     NetUtil.asyncCopy(istream, ostream, function(status) {
 
-        if (!components.isSuccessCode(status)) {
+//         if (!components.isSuccessCode(status)) {
 
-            alert('error');                 
+//             alert('error');                 
 
-        }else{
+//         }else{
 
-            alert('success');
-        }
-    });
-} catch (e) {
-    return false;
-}
-=======
->>>>>>> dc24d6851b48b0bcb481f19c9a4d3c3628571acb
+//             alert('success');
+//         }
+//     });
+// } catch (e) {
+//     return false;
+// }
+
